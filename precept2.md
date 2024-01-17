@@ -6,12 +6,11 @@ author: Hans Halvorson
 # Introduction 
 
 This week finds us in the thick of things with learning how to write
-formal proofs. The main new complication is the use of dependency
+formal proofs. The new complication is that we now use dependency
 numbers, and the primary focus of today's precept is developing your
-familiarity and proficiency with this kind of thinking. The biggest
-challenge, without a doubt, is the rule of or elimination. In fact, it
-is the most complicated inference rule that we will learn all
-semester.
+familiarity and proficiency with this approach. The biggest challenge,
+without a doubt, is the rule of or elimination. In fact, it is the
+most complicated inference rule that we will learn all semester.
 
 We will also do a bit more translation work in order to draw on the
 intuitions that you already have from using logic with natural
