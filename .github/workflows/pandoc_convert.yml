@@ -22,7 +22,7 @@ jobs:
 
       - name: Convert MD to HTML
         run: |
-	  mkdir -p html_files
+          mkdir -p html_files
           for file in *.md; do
             pandoc --standalone "$file" -o "${file%.md}.html"
           done
@@ -38,7 +38,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-	  git add *.html
+          git add *.html
           git commit -m "Convert MD files to HTML" -a
 
       - name: Push changes
