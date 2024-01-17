@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Hans Halvorson" />
+  <title>logic precept 4</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">logic precept 4</h1>
+<p class="author">Hans Halvorson</p>
+</header>
+<p>Today we develop a different approach to looking at (formal)
+arguments. Many of you will already have heard about the notion of a
+truth table. What you might not have heard is how truth tables are
+related to proofs. We will postpone the deeper conceptual issues until
+next week. But this week we will see how to write the joint truth table
+for <span class="math inline"><em>n</em></span> sentences, and how to
+interpret the resulting output. We will then talk about some short-cuts
+that one might employ – rather than writing out a full truth table. In
+practice these short cuts can be crucial, as writing a full truth table
+is incredibly inefficient for more complex sentences. What’s more,
+writing a full truth table is a completely mindless (algorithmic)
+process, whereas there are other methods that involve interesting
+strategies. (For you COS people: we are touching here on the infamous
+P=NP problem, which is, unfortunately, too advanced to talk about
+explicitly in this course.)</p>
+<h1 id="truth-tables">Truth tables</h1>
+<p>Let’s first recall the truth tables for the connectives.</p>
+<table>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>¬P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ∧ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ∨ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P → Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ↔︎ Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>The bad news is that you just need to memorize these. The good news
+is that once you write circa 10 truth tables, you will automatically
+memorize them.</p>
+<p>The typical task is to write a truth table for <span
+class="math inline"><em>n</em></span> sentences. To do that, we simply
+write the sentences together on a line, leaving some space to the left.
+On the left, we then add columns for each of the <em>atomic
+sentences</em> that occurs in these sentences. Then we write out all
+possible combinations of assignments of truth values to those atomic
+sentences. One easy way to make sure to capture all of them is to list
+the atomic sentences in alphabetic order. Then write T in the first
+<span class="math inline">2<sup><em>n</em> − 1</sup></span> rows under
+the first letter, and F in the subsequent <span
+class="math inline">2<sup><em>n</em> − 1</sup></span> rows under the
+first letter. (That makes for a total of <span
+class="math inline">2<sup><em>n</em> − 1</sup> + 2<sup><em>n</em> − 1</sup> = 2(2<sup><em>n</em> − 1</sup>) = 2<sup><em>n</em></sup></span>
+rows.) Under the second letter, write T in the first <span
+class="math inline">2<sup><em>n</em> − 2</sup></span> rows, and F in the
+next <span class="math inline">2<sup><em>n</em> − 1</sup></span> rows,
+then T in the next <span
+class="math inline">2<sup><em>n</em> − 2</sup></span> rows, then F in
+the last <span class="math inline">2<sup><em>n</em> − 2</sup></span>
+rows. If you continue with this procedure, then under the last atomic
+sentence, you will alternate between T and F.</p>
+<p>Now the tedium really begins. If you want to write out every single
+detail, you can now proceed to copying those Ts and Fs under the atomic
+sentences as they occur in the original sentences. Then you proceed
+outward, assigning T and F to the Boolean combinations of things that
+you have already assigned T and F to. (If you are a visual thinker, you
+might be able to imagine that T and F are flowing down the branches of
+the parse-tree of the sentence, following the rules given by the truth
+tables.)</p>
+<p><strong>Exercise:</strong> Write a full truth table for <span
+class="math inline">(<em>P</em>∧<em>Q</em>) ∨ ¬(<em>P</em>→<em>Q</em>)</span>.</p>
+<p><strong>Exercise:</strong> Write a full truth table for <span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>R</em></span>.</p>
+<h1 id="what-do-truth-tables-mean">What do truth tables mean?</h1>
+<h2 id="for-a-single-sentence">For a single sentence</h2>
+<p>Each sentence of proposition logic is either atomic, or it has a
+<strong>main connective</strong>. This main connective is the last
+connective that occurs in the parse tree of the sentence, and it is also
+the last column to be filled out in a truth table for the sentence. It
+is a good idea, when you are writing a truth table, to circle or
+highlight the column under the main connective so as to stay clear about
+the meaning of the truth table.</p>
+<p><strong>Exercise:</strong> What is the main connective of <span
+class="math inline">(<em>P</em>∧<em>Q</em>) ∨ ¬(<em>P</em>→<em>Q</em>)</span>?</p>
+<p><strong>Exercise:</strong> What is the main connective of <span
+class="math inline">((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>?</p>
+<p>There are only three ways that the truth table of a single sentence
+can turn out. The column under the main connective can have:</p>
+<ol type="1">
+<li><p>All T, in which case we say that the sentence is a
+**tautology*..</p></li>
+<li><p>All F, in which case we say that the sentence is an
+<em>inconsistency</em>.</p></li>
+<li><p>Some T and some F, in which case we say that the sentence is a
+<em>contingency</em>.</p></li>
+</ol>
+<p><strong>Exercise:</strong> Classify the following sentences as
+tautology, inconsistency, or contingency.</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> ∨ ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→¬<em>P</em>) → ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) ∨ (<em>Q</em>→<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∧<em>Q</em>∧¬<em>R</em>) ∨ (¬<em>P</em>∧¬<em>Q</em>∧<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>↔︎<em>Q</em>) ↔︎ <em>R</em></span></p></li>
+</ol>
+<h2 id="for-n1-sentences">For <span
+class="math inline"><em>n</em> &gt; 1</span> sentences</h2>
+<p>If we now put <span class="math inline"><em>n</em> &gt; 1</span>
+sentences side by side in a truth table, then the interesting question
+is whether they can all be true simultaneously. If they can, then we say
+that the sentences are <strong>consistent</strong>. And if they cannot,
+then we say that the sentences are <strong>inconsistent</strong>.</p>
+<p><strong>Exercise:</strong> If <span
+class="math inline"><em>ϕ</em> ∧ <em>ψ</em></span> is a contingency,
+then can you say anything about <span
+class="math inline"><em>ϕ</em></span> and <span
+class="math inline"><em>ψ</em></span>?</p>
+<p><strong>Exercise:</strong> If <span
+class="math inline"><em>ϕ</em></span> is a tautology, then what are the
+possibilities for <span
+class="math inline"><em>ϕ</em> ∧ <em>ψ</em></span>? What are the
+possibilities for <span
+class="math inline"><em>ϕ</em> ∨ <em>ψ</em></span>?</p>
+<h2 id="for-arguments">For arguments</h2>
+<p>An argument consists of <span
+class="math inline"><em>n</em> ≥ 1</span> sentences: a conclusion, and
+<span class="math inline"><em>n</em> − 1</span> premises. (Yes, we can
+also have arguments with zero premises.) We can set these sentences side
+by side and build a joint truth table, and here is how to interpret such
+a truth table:</p>
+<ol type="1">
+<li><p>If, in every row in which all the premises are true, the
+conclusion is also true, then the argument is said to be
+<strong>valid</strong>.</p></li>
+<li><p>If there is some row in which all the premises are true but the
+conclusion is false, then the argument is said to be
+<strong>invalid</strong>.</p></li>
+</ol>
+<p>If we let <span class="math inline"><em>ψ</em></span> denote the
+conclusion, and <span
+class="math inline"><em>ϕ</em><sub>1</sub>, …, <em>ϕ</em><sub><em>n</em> − 1</sub></span>
+denote the premises, then the argument <span
+class="math inline"><em>ϕ</em><sub>1</sub>, …, <em>ϕ</em><sub><em>n</em></sub>; <em>ψ</em></span>
+is valid just in case <span
+class="math inline"><em>ϕ</em><sub>1</sub>, …, <em>ϕ</em><sub><em>n</em> − 1</sub>, ¬<em>ψ</em></span>
+forms an inconsitent <span class="math inline"><em>n</em></span>-tuple
+of sentences. In other words: the argument is invalid just in case <span
+class="math inline"><em>ϕ</em><sub>1</sub>, …, <em>ϕ</em><sub><em>n</em> − 1</sub>, ¬<em>ψ</em></span>
+is consistent, i.e. there is a row in the truth table in which they are
+all true. Such a row of a truth table is called a
+<strong>counterexample</strong> to the argument’s validity.</p>
+<p><strong>Exercises:</strong> Determine whether the following arguments
+are valid or not. Explain your answer by showing the existence of a row
+of a truth table, or by pointing to a full truth table, or something of
+the sort. Your answer should be articulated in English prose so that it
+can convince anyone else who is familiar with truth tables.</p>
+</body>
+</html>
