@@ -30,8 +30,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-	  for file in *.md; do
-	    git add "${file%.md}.html"
+	  git add *.html
           git commit -m "Convert MD files to HTML" -a
 
       - name: Push changes
