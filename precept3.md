@@ -14,7 +14,7 @@ this is a crucial way in which "proving" differs from following an
 algorithm. What you will need to do is to develop a good sense of
 strategy, and the only way to do that is through *practice*.
 
-Never give up
+Never give up. Maybe give up
 
 <!-- working backwards -->
 
