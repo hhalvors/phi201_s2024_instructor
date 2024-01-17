@@ -34,13 +34,6 @@ jobs:
           git add html_files/*.html  # Adjust the path to match where your HTML files are
           git commit -m "Convert MD files to HTML" -a
 
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add *.html
-          git commit -m "Convert MD files to HTML" -a
-
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
