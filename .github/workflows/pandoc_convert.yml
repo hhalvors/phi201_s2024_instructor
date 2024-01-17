@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p html_files
           for file in *.md; do
-            pandoc --standalone "html_files/$file" -o "${file%.md}.html"
+            pandoc --standalone "$file" -o "html_files/${file%.md}.html"
           done
 
       - name: Commit files
