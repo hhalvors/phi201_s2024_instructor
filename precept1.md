@@ -5,14 +5,15 @@ author: Hans Halvorson
 
 # Introduction
 
-We have to start this course relatively quickly, which means that the
-first precept will cover both general concepts, and the first steps
-into our formal system of logic. At the end of this week, you should
-be comfortable with the various symbols $\vee ,\wedge ,\to ,\neg$ and
-how they work to build more complex sentences. You should also be
-comfortable writing simple proofs that involve the intro and elim
-rules for $\wedge$, the intro rule for $\vee$, modus ponens, and modus
-tollens.
+We have to get up to speed quickly, means that the first precept will
+cover both general concepts, and the first steps into our formal
+system of logic. This is a lot of ground to cover in 80 minutes!
+
+At the end of this week, you should be comfortable with the various
+symbols $\vee ,\wedge ,\to ,\neg$ and how they work to build more
+complex sentences. You should also be comfortable writing simple
+proofs that involve the intro and elim rules for $\wedge$, the intro
+rule for $\vee$, modus ponens, and modus tollens.
 
 The first part of the precept is primarily qualitative: we take
 concepts and words that you already use, and we formulate some more
