@@ -28,28 +28,28 @@ Let's first recall the truth tables for the connectives.
 | F   | T  |
 
 | P   | Q   | P ∧ Q |
-|-----|-----|-------|
+|-----|-----|:-----:|
 | T   | T   |   T   |
 | T   | F   |   F   |
 | F   | T   |   F   |
 | F   | F   |   F   |
 
 | P   | Q   | P ∨ Q |
-|-----|-----|-------|
+|-----|-----|:-----:|
 | T   | T   |   T   |
 | T   | F   |   T   |
 | F   | T   |   T   |
 | F   | F   |   F   |
 
 | P   | Q   | P → Q |
-|-----|-----|-------|
+|-----|-----|:-----:|
 | T   | T   |   T   |
 | T   | F   |   F   |
 | F   | T   |   T   |
 | F   | F   |   T   |
 
 | P   | Q   | P ↔ Q |
-|-----|-----|-------|
+|-----|-----|:-----:|
 | T   | T   |   T   |
 | T   | F   |   F   |
 | F   | T   |   F   |
@@ -83,6 +83,11 @@ thinker, you might be able to imagine that T and F are flowing down
 the branches of the parse-tree of the sentence, following the rules
 given by the truth tables.)
 
+**Exercise:** Write a full truth table for $(P\wedge Q)\vee (\neg
+P\wedge \neg Q)$.
+
+
+
 **Exercise:** Write a full truth table for $(P\wedge Q)\vee \neg (P\to
 Q)$.
 
@@ -108,16 +113,56 @@ meaning of the truth table.
 There are only three ways that the truth table of a single sentence
 can turn out. The column under the main connective can have:
 
-1. All T, in which case we say that the sentence is a **tautology*..
+1. All T, in which case we say that the sentence is a **tautology**.
 
 2. All F, in which case we say that the sentence is an
-*inconsistency*.
+**inconsistency**.
    
 3. Some T and some F, in which case we say that the sentence is a
-*contingency*. 
+**contingency**.
 
-**Exercise:** Classify the following sentences as tautology,
-inconsistency, or contingency.
+
+
+Suppose that you are asked to determine if a sentence is a tautology,
+inconsistency, or contingency. This kind of problem can always be
+answered by writing out a full truth table (and reading off the data
+under the main connective). However, sometimes you can solve the
+problem more quickly than that --- and in a more satisfying way. For
+example, suppose that $A$ is some extremely complicated sentence, and
+that $B$ is false on at least one line. Then $A\wedge B$ cannot be a
+tautology, no matter what truth values $A$ can take on. Let's look at
+a couple of examples.
+
+**Example.** Classify the sentence $P\leftrightarrow (Q\wedge \neg
+R)$.
+
+```
+It's easy to see that this sentence can be true: when P and Q are true
+and R is false, then the sentence as a whole is true. Similarly, since
+we can just change the truth value of P to false, this sentence can
+also be false. Therefore, this sentence is a contingency.
+```
+
+There are more sophisticated, and systematic, ways of doing what I
+just did. But for now, I'll just state a few rules of thumb:
+
+1. It's easy to check that a conjunction is false, because you only
+need to find a case where one of its conjuncts is false. 
+
+2. For the same reason, it's easy to check that a disjunction is
+false.
+
+3. The only way that a conditional can be false is when its antecedent
+is true and its consequent is false.
+
+4. The more practice you get, the more quickly you will be able to
+identify standard tautologies and inconsistencies. You will also
+become more proficient at recognizing logical implications. 
+   
+
+**Exercise.** Classify the following sentences as tautology,
+inconsistency, or contingency. 
+
 
 1. $P\vee \neg P$
 
@@ -125,19 +170,59 @@ inconsistency, or contingency.
 
 3. $(P\to Q)\vee (Q\to P)$
 
-4. $(P\wedge Q\wedge \neg R)\vee (\neg P\wedge \neg Q\wedge R)$
+4. $(P\wedge (Q\wedge \neg R))\vee (\neg P\wedge (\neg Q\wedge R))$
 
 5. $(P\leftrightarrow Q)\leftrightarrow R$
+
+6. $((P\to Q)\to P)\to P$
+
+
+**Exercise.** Show that if $B$ is a tautology, then $A\wedge B$ is
+logically equivalent to $A$.
+
+**Exercise.** Show that if $B$ is an inconsistency, then $A\vee B$ is
+logically equivalent to $A$.
 
 
 ## For $n>1$ sentences
 
-If we now put $n>1$ sentences side by side in a truth table, then the
-interesting question is whether they can all be true
-simultaneously. If they can, then we say that the sentences are
-**consistent**. And if they cannot, then we say that the sentences are
-**inconsistent**.
+If we now put $n>1$ sentences side by side in a truth table, then we
+can answer questions about the *semantic relationships* between those
+sentences. For example, if sentences $A_1,\dots ,A_n$ can be true
+simultaneously, then we say that they are **consistent**. Similarly,
+if $A_1,\dots ,A_n$ cannot be true simultaneously, then we say that
+they are **inconsistent**.
 
+For two sentences, $A$ and $B$, we say that $A$ **implies** $B$ just
+in case $B$ is true whenever $A$ is. We say that $A$ and $B$ are
+**equivalent** just in case $A$ implies $B$ and vice versa. Thus, $A$
+and $B$ are equivalent just in case they have the same truth value in
+all rows of their joint truth table.
+
+**Exercise.** What is the semantic relationship between $P\to Q$ and
+$\neg P\vee Q$?
+
+| P   | Q   | P → Q | ¬P ∨ Q |
+|:---:|:---:|:-----:|:------:|
+| T   | T   | T     | T      |
+| T   | F   | F     | F      |
+| F   | T   | T     | T      |
+| F   | F   | T     | T      |
+
+These two sentences always have the same truth value, thus they are
+logicall equivalent.
+
+**Exercise.** Show that $\neg (P\to Q)$ logically implies $P\wedge
+\neg Q$.
+
+```
+Suppose that -(p>q) is true. In that case p>q is false, which means
+that p is true and q is false. But in the case, p&-q is true.
+```
+
+
+**Exercise:** What is the semantic relationship between $(P\wedge Q)$
+and $\neg (P\to Q)$?
 
 
 **Exercise:** If $\phi\wedge\psi$ is a contingency, then can you say
@@ -170,9 +255,26 @@ argument is invalid just in case $\phi _1,\dots ,\phi _{n-1},\neg
 they are all true. Such a row of a truth table is called a
 **counterexample** to the argument's validity.
 
-**Exercises:** Determine whether the following arguments are valid or
+
+**Exercises.** Determine whether the following arguments are valid or
 not. Explain your answer by showing the existence of a row of a truth
 table, or by pointing to a full truth table, or something of the
 sort. Your answer should be articulated in English prose so that it
 can convince anyone else who is familiar with truth tables.
+
+1. $P\to (Q\to R)\:\vdash \: (P\wedge Q)\to R$
+
+2. $P\to R\:\vdash (P\vee Q)\to R$
+
+
+
+
+# Extra credit (fun)
+
+1. How many possible truth tables are there for sentences that contain
+only the atomic sentence $P$?
+
+2. For sentences with just the atomic sentence $P$, show that every
+truth table is represented by a sentence whose only connectives are
+$\wedge$ and $\neg$. 
    

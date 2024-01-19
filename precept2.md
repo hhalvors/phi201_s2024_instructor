@@ -146,9 +146,14 @@ absurdum, which is only introduced in a subsequent section.)
 9. $(P\to Q)\to P\: \vdash \: \neg P\to P$
 
 
+*Exercise.* What is wrong with the following "proof"?
 
-
-
+```
+1  (1) p&q   A
+1  (2) p     1 &E
+1  (3) q     2 &E
+   (4) p>q   2,3 CP
+```
 
 
 
