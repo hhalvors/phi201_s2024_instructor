@@ -232,15 +232,27 @@
 <h1 class="title">logic precept 5</h1>
 <p class="author">Hans Halvorson</p>
 </header>
-<p>Today we cover three things: (1) meta-rules for proofs, (2) relating
-proofs to truth tables, and (3) review for midterm exam.</p>
+<p>Today we cover three things:</p>
+<ol type="1">
+<li><a href="#meta-rules-for-proofs">Meta-rules for proofs</a></li>
+<li><a href="#relating-proofs-and-truth-tables">Relating proofs and
+truth tables</a></li>
+<li><a href="#review-for-midterm-exam">Review for midterm exam</a></li>
+</ol>
 <h1 id="meta-rules-for-proofs">Meta-rules for proofs</h1>
 <h2 id="substitution">Substitution</h2>
 <p>Since our rules of proof are schematic, changing propositional
-constants (i.e. atomic sentences) in a proof preserves validity.</p>
-<p>BUT: an invalid argument can be made valid by substitution! Example:
-<span class="math inline"><em>P</em> → <em>Q</em></span> is invalid, but
-<span class="math inline"><em>P</em> → <em>P</em></span> is valid.</p>
+constants (i.e. atomic sentences) in a proof preserves validity. In the
+simplest cases, this fact is completely obvious. For example, modus
+ponens doesn’t just say that you can derive <span
+class="math inline"><em>Q</em></span> from <span
+class="math inline"><em>P</em> → <em>Q</em></span> and <span
+class="math inline"><em>P</em></span>. It says that you can derive the
+consequent of any conditional from that conditional and antecedent.</p>
+<p>Note, however, that an invalid argument can be made valid by
+substitution! Example: <span
+class="math inline"><em>P</em> → <em>Q</em></span> is invalid, but <span
+class="math inline"><em>P</em> → <em>P</em></span> is valid.</p>
 <p><strong>Definition.</strong> Let <span
 class="math inline"><em>A</em></span> be a propositional logic sentence.
 We say that <span class="math inline"><em>A</em>′</span> is a
@@ -250,10 +262,10 @@ class="math inline"><em>A</em>′</span> results from uniformly replacing
 propositional constants in <span class="math inline"><em>A</em></span>
 with sentences.</p>
 <p>This definition is not precise; but a more precise definition would
-require that we talk explicitly about the definition of a type
-<code>WFF</code> of well-formed formulas of propositional logic — and
-this definition is recursive. Here’s what the definition of such a type
-might look like in the Haskell programming language:</p>
+require that we explicitly define a type <code>WFF</code> of well-formed
+formulas of propositional logic — and this definition would be
+recursive. Here’s what the definition of such a type might look like in
+the Haskell programming language:</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">WFF</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ot">=</span> <span class="dt">Var</span> <span class="dt">String</span>         <span class="co">-- A propositional variable</span></span>
@@ -340,7 +352,13 @@ were used.</p>
         = (p&amp;-q)|(q&amp;-p)</code></pre>
 <p><strong>Exercise.</strong> Use replacement to argue that <span
 class="math inline">(<em>P</em>∧<em>Q</em>) ∨ (<em>P</em>∧¬<em>Q</em>)</span>
-is equivalent to <span class="math inline"><em>P</em></span>.</p>
+is equivalent to <span class="math inline"><em>P</em></span>. You might
+have to use the fact that if <span class="math inline"><em>B</em></span>
+is a tautology, then <span
+class="math inline"><em>A</em> ∧ <em>B</em></span> is equivalent to
+<span class="math inline"><em>A</em></span>. (The latter fact is also a
+good illustration of the points covered in the next section – about
+proofs and truth tables.)</p>
 <h2 id="liberal-proofs">Liberal proofs</h2>
 <h1 id="relating-proofs-and-truth-tables">Relating proofs and truth
 tables</h1>
@@ -379,10 +397,30 @@ a tautology (true in all cases), then there is a proof of the sequent
 class="math inline"><em>P</em> ∨ ¬<em>P</em></span>, <span
 class="math inline"><em>P</em> → <em>P</em></span>, <span
 class="math inline">((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>.</p>
-<p><strong>Exercise:</strong> Explain how you know that the following is
-not a good proof strategy:</p>
-<p><strong>Exercise:</strong> Can there be a correctly written proof
-with the following lines? Explain your answer by reference to</p>
+<p><strong>Exercise.</strong> Explain how you know that the following is
+not a good strategy for proving that <span
+class="math inline"> ⊢ (<em>P</em>→<em>Q</em>) ∨ (<em>Q</em>→<em>P</em>)</span>.</p>
+<pre><code>Strategy: Derive a line of the form
+
+  (n) p&gt;q      ?
+   
+with no dependency numbers. Then use or-introduction to derive (p&gt;q)|(q&gt;p).</code></pre>
+<p><strong>Exercise.</strong> Can there be a correctly written proof
+with the following lines? Explain your answer by reference to the
+concept of logical validity.</p>
+<pre><code>1  (1) p      A
+...
+1  (7) p&amp;q    ?</code></pre>
+<p><strong>Exercise.</strong> Many people have been troubled by the fact
+that the sequent <span
+class="math inline"><em>Q</em> ⊢ <em>P</em> → <em>Q</em></span> can be
+proven. Explain, in terms of semantics (truth tables), why this sequent
+is OK.</p>
+<p><strong>Exercise.</strong> Similarly, many people have been troubled
+by the fact that the sequent <span
+class="math inline"><em>P</em>, ¬<em>P</em> ⊢ <em>Q</em></span> can be
+proven. Again, explain in terms of semantics (truth tables) why this
+sequent is OK.</p>
 <h1 id="review-for-midterm-exam">Review for midterm exam</h1>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">

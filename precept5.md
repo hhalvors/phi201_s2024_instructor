@@ -3,28 +3,36 @@ title: "logic precept 5"
 author: Hans Halvorson
 ---
 
-Today we cover three things: (1) meta-rules for proofs, (2) relating
-proofs to truth tables, and (3) review for midterm exam.
+Today we cover three things: 
+
+1. [Meta-rules for proofs](#meta-rules-for-proofs)
+2. [Relating proofs and truth tables](#relating-proofs-and-truth-tables)
+3. [Review for midterm exam](#review-for-midterm-exam)
+
 
 # Meta-rules for proofs
 
 ## Substitution
 
 Since our rules of proof are schematic, changing propositional
-constants (i.e. atomic sentences) in a proof preserves validity.
+constants (i.e. atomic sentences) in a proof preserves validity. In
+the simplest cases, this fact is completely obvious. For example,
+modus ponens doesn't just say that you can derive $Q$ from $P\to Q$
+and $P$. It says that you can derive the consequent of any conditional
+from that conditional and antecedent.
 
-BUT: an invalid argument can be made valid by substitution! Example:
-$P\to Q$ is invalid, but $P\to P$ is valid.
+Note, however, that an invalid argument can be made valid by
+substitution! Example: $P\to Q$ is invalid, but $P\to P$ is valid.
 
 **Definition.** Let $A$ be a propositional logic sentence. We say that
 $A'$ is a **substitution instance** of $A$ if $A'$ results from
 uniformly replacing propositional constants in $A$ with sentences.
 
 This definition is not precise; but a more precise definition would
-require that we talk explicitly about the definition of a type `WFF`
-of well-formed formulas of propositional logic --- and this definition
-is recursive. Here's what the definition of such a type might look
-like in the Haskell programming language:
+require that we explicitly define a type `WFF` of well-formed formulas
+of propositional logic --- and this definition would be
+recursive. Here's what the definition of such a type might look like
+in the Haskell programming language:
 
 ```haskell
 data WFF
@@ -137,7 +145,10 @@ used.
 ```
 
 **Exercise.** Use replacement to argue that $(P\wedge Q)\vee (P\wedge
-\neg Q)$ is equivalent to $P$.
+\neg Q)$ is equivalent to $P$. You might have to use the fact that if
+$B$ is a tautology, then $A\wedge B$ is equivalent to $A$. (The latter
+fact is also a good illustration of the points covered in the next
+section -- about proofs and truth tables.)
 
 
 
@@ -173,11 +184,35 @@ As a special case: if $B$ is a tautology (true in all cases), then
 there is a proof of the sequent $\vdash B$. Examples: $P\vee\neg P$,
 $P\to P$, $((P\to Q)\to P)\to P$.
 
-**Exercise:** Explain how you know that the following is not a good
-proof strategy:
+**Exercise.** Explain how you know that the following is not a good
+strategy for proving that $\vdash (P\to Q)\vee (Q\to P)$. 
 
-**Exercise:** Can there be a correctly written proof with the
-following lines? Explain your answer by reference to 
+```
+Strategy: Derive a line of the form
+
+  (n) p>q      ?
+   
+with no dependency numbers. Then use or-introduction to derive (p>q)|(q>p).
+```
+
+**Exercise.** Can there be a correctly written proof with the
+following lines? Explain your answer by reference to the concept of
+logical validity.
+
+```
+1  (1) p      A
+...
+1  (7) p&q    ?
+```
+
+**Exercise.** Many people have been troubled by the fact that the
+sequent $Q\vdash P\to Q$ can be proven. Explain, in terms of semantics
+(truth tables), why this sequent is OK. 
+
+**Exercise.** Similarly, many people have been troubled by the fact
+that the sequent $P,\neg P\vdash Q$ can be proven. Again, explain in
+terms of semantics (truth tables) why this sequent is OK. 
+
 
 # Review for midterm exam
 
