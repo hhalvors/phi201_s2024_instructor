@@ -24,6 +24,14 @@ we are doing as establishing conventions for a fruitful discussion.
 
 # General concepts
 
+- Sentence versus statement versus proposition
+
+  - A sentence need not be a statement
+  
+  - A statement can be true or false
+  
+    - Vagueness
+
 - Argument
 
   - Definition?
@@ -216,6 +224,13 @@ just other ways of phrasing the first ones?
 
 2.  Prove that $P\wedge (Q\wedge R)$ follows from $(P\wedge Q)\wedge R$.
 
+
+We now start using the turnstile symbol $\vdash$ as shorthand for
+saying that the statement on the right of the turnstile can be derived
+from the statements on the left of the turnstile. If we ask you to
+demonstrate that $A _1,\dots ,A _n\vdash B$, then you're supposed to
+begin with $A_1,\dots ,A_n$ on the first $n$ lines, then add as many
+steps as you need to derive $B$ on the last line.
 
 **Exercise 2.2** ($\wedge$E, $\wedge$I, $\vee$I)
 
