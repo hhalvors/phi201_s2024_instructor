@@ -30,7 +30,9 @@ we are doing as establishing conventions for a fruitful discussion.
   
   - A statement can be true or false
   
-    - Vagueness
+    - Vagueness: Natural language statements can seem sort-of-true and
+      sort-of-false, e.g. "it is cold today". We are operating under
+      the idealization that statements are 100% true or 100% false.
 
 - Argument
 
@@ -52,12 +54,11 @@ we are doing as establishing conventions for a fruitful discussion.
   
   - Deductive
   
-    - Valid
+    - **Valid**
   
   - Circular
     
-  
-
+Validity is the key concept for this course.
 
 ## Short answer
 

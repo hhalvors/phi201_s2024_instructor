@@ -182,14 +182,282 @@ language.</p>
 <h1 id="old-proof-rules-in-new-form">Old proof rules in new form</h1>
 <p>Let’s first see how to use our old rules (from last week) while
 incorporating the use of dependency numbers.</p>
+<p><strong>Exercise 2.5</strong> (<span class="math inline">∧</span>E,
+<span class="math inline">∧</span>I, <span
+class="math inline">∨</span>I, MP, MT, DN)</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> ∧ (<em>Q</em>∧<em>R</em>)  ⊣ ⊢ (<em>P</em>∧<em>Q</em>) ∧ <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∧ <em>P</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>Q</em>, <em>Q</em> ⊢ ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline">¬¬<em>P</em> ⊢ ¬¬<em>P</em> ∧ (<em>P</em>∨<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>∧<em>Q</em>) → <em>R</em>, ¬<em>R</em> ⊢ <em>P</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>∧<em>R</em>), <em>A</em> → ¬<em>R</em>, <em>P</em> ⊢ ¬<em>A</em></span></p></li>
+<li><p><span
+class="math inline">¬<em>P</em> → ¬<em>Q</em>, <em>Q</em> ⊢ <em>P</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ⊢ ¬¬(<em>P</em>∨<em>Q</em>)</span></p></li>
+</ol>
 <h1 id="new-proof-rules">New proof rules</h1>
 <h2 id="conditional-proof">Conditional proof</h2>
+<p><strong>Exercise 3.1</strong> Prove the following sequents. (You
+should not use reductio ad absurdum in any of these problems, although
+you might be tempted to do so in 3.1.8, 3.1.9, and 3.1.10. The hints
+explain how the other rules can be used to derive the same things as RA,
+albeit in a much more roundabout way. For the philosophically minded: MT
+is an “impure” rule since its application requires the presence of
+different connectives.)</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> ⊢ <em>Q</em> → (<em>P</em>∧<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) ∧ (<em>P</em>→<em>R</em>) ⊢ <em>P</em> → (<em>Q</em>∧<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ <em>Q</em> → (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → <em>Q</em> ⊢ (<em>Q</em>→<em>R</em>) → (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>P</em>→<em>Q</em>) ⊢ <em>P</em> → <em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ (<em>P</em>∧<em>Q</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∨<em>Q</em>) → <em>R</em> ⊢ <em>P</em> → <em>R</em></span></p></li>
+<li><p><span
+class="math inline">¬<em>P</em> ⊢ ¬(<em>P</em>∧<em>Q</em>)</span> (Hint:
+For any sentences <span class="math inline"><em>ϕ</em></span> and <span
+class="math inline"><em>ψ</em></span>, if you can derive <span
+class="math inline"><em>ψ</em> ⊢ <em>ϕ</em></span> then you can derive
+<span class="math inline">¬<em>ϕ</em> ⊢ ¬<em>ψ</em></span>. Indeed,
+apply CP to <span class="math inline"><em>ψ</em> ⊢ <em>ϕ</em></span> to
+derive <span class="math inline"> ⊢ <em>ψ</em> → <em>ϕ</em></span>. Now
+assume <span class="math inline">¬<em>ϕ</em></span> and apply
+MT.)</p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>∨<em>Q</em>) ⊢ ¬<em>P</em> ∧ ¬<em>Q</em></span>
+(Hint: If you can prove <span
+class="math inline">¬(<em>P</em>∨<em>Q</em>) ⊢ ¬<em>P</em></span> and
+<span class="math inline">¬(<em>P</em>∨<em>Q</em>) ⊢ ¬<em>Q</em></span>
+individually, then you can use <span class="math inline">∧</span>I and
+you’re done. )</p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>P</em> ⊢ ¬<em>P</em></span> (Hint:
+First prove that <span
+class="math inline"><em>P</em> ⊢ (<em>P</em>→¬<em>P</em>) → ¬<em>P</em></span>,
+resulting in a proof with first line “<span
+class="math inline">1 (1) <em>P</em> A</span>” and last line “<span
+class="math inline">1 (<em>n</em>) (<em>P</em>→¬<em>P</em>) → ¬<em>P</em></span>”.
+Now use line 1 again to derive <span
+class="math inline">¬¬<em>P</em></span> and apply MT.)</p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>), <em>P</em> → <em>Q</em> ⊢ <em>P</em> → <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ (<em>P</em>→<em>Q</em>) → (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → <em>Q</em> ⊢ ¬<em>Q</em> → ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∧<em>Q</em>) → <em>R</em> ⊢ <em>P</em> → (<em>Q</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ <em>P</em> → (¬<em>R</em>→¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ ¬<em>R</em> → (<em>Q</em>→¬<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em> ⊢ (<em>P</em>→<em>Q</em>) → <em>Q</em></span>
+(Hint: Not as difficult as it looks. Assume <span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em></span> and
+<span class="math inline"><em>P</em> → <em>Q</em></span>. The latter can
+be used both as the antecedent of a conditional, and as a conditional
+itself.)</p></li>
+</ol>
+<p><strong>Exercise 3.2</strong> Prove the following sequents. (Do not
+use reductio ad absurdum, which is only introduced in a subsequent
+section.)</p>
+<ol type="1">
+<li><p><span
+class="math inline">⊢ (<em>P</em>∧<em>Q</em>) → (<em>Q</em>∧<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline">⊢ (<em>P</em>∧<em>Q</em>) → <em>P</em></span></p></li>
+<li><p><span
+class="math inline">⊢ <em>Q</em> → (<em>P</em>→<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">⊢ <em>Q</em> → (<em>P</em>→<em>P</em>)</span></p></li>
+<li><p><span class="math inline">⊢ <em>P</em> ∨ ¬<em>P</em></span>
+(Hint: This <em>can</em> be proven with the rules we have so far! One
+possibility is to use 3.1.10, but replace <span
+class="math inline"><em>P</em></span> with <span
+class="math inline"><em>P</em> ∨ ¬<em>P</em></span>. In particular, use
+the fact that <span
+class="math inline">¬(<em>P</em>∨¬<em>P</em>) ⊢ <em>P</em></span> to
+derive <span
+class="math inline"> ⊢ ¬(<em>P</em>∨¬<em>P</em>) → ¬¬(<em>P</em>∨¬<em>P</em>)</span>.)</p></li>
+<li><p><span
+class="math inline">¬<em>P</em> ⊢ <em>P</em> → <em>Q</em></span> (Hint:
+Prove <span
+class="math inline">¬<em>P</em> ⊢ ¬<em>Q</em> → ¬<em>P</em></span> and
+then use the contrapositive maneuver.)</p></li>
+<li><p><span
+class="math inline">⊢ (<em>P</em>→<em>Q</em>) → (¬<em>Q</em>→¬<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em>, <em>Q</em> ⊢ <em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em> ⊢ ¬<em>P</em> → <em>P</em></span></p></li>
+</ol>
 <h2 id="or-elimination">Or elimination</h2>
+<p><strong>Exercise 3.3</strong> Prove the following sequents. (Still do
+not use RA. It is good to learn to prove directly when you can!)</p>
+<ol type="1">
+<li><p><span
+class="math inline">(<em>P</em>→<em>R</em>) ∧ (<em>Q</em>→<em>R</em>) ⊢ (<em>P</em>∨<em>Q</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ∨ (<em>Q</em>∨<em>R</em>)  ⊣ ⊢ (<em>P</em>∨<em>Q</em>) ∨ <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ∨ <em>Q</em>, ¬<em>P</em> ⊢ <em>Q</em></span>
+(Hint: Recall that <span
+class="math inline">¬<em>P</em> ⊢ <em>P</em> → <em>Q</em></span>.)</p></li>
+<li><p><span
+class="math inline"><em>P</em> ∧ (<em>Q</em>∨<em>R</em>)  ⊣ ⊢ (<em>P</em>∧<em>Q</em>) ∨ (<em>P</em>∧<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ∨ (<em>Q</em>∧<em>R</em>)  ⊣ ⊢ (<em>P</em>∨<em>Q</em>) ∧ (<em>P</em>∨<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">¬<em>P</em> ∨ <em>Q</em>  ⊣ ⊢ <em>P</em> → <em>Q</em></span></p></li>
+<li><p><span
+class="math inline">¬<em>P</em> ∨ ¬<em>Q</em> ⊢ ¬(<em>P</em>∧<em>Q</em>)</span></p></li>
+</ol>
+<p><strong>Exercise 3.4</strong> Prove the following sequents.</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> → <em>Q</em> ⊢ ¬(<em>P</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>∧<em>Q</em>) ⊢ ¬<em>P</em> ∨ ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>→<em>Q</em>) ⊢ <em>P</em> ∧ ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"> ⊢ (<em>P</em>→<em>Q</em>) ∨ (<em>Q</em>→<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>∨<em>R</em>) ⊢ (<em>P</em>→<em>Q</em>) ∨ (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∧<em>Q</em>) → ¬<em>Q</em> ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ∧ ¬<em>Q</em> ⊢ ¬(<em>P</em>→<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">⊢ ((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>
+(Hint: One possibility is to first prove <span
+class="math inline"> ⊢ <em>P</em> ∨ ¬<em>P</em></span>, and then argue
+by cases. The first case is easy if you remember “positive paradox”. For
+the second case, remember “negative paradox”, i.e. that <span
+class="math inline">¬<em>P</em></span> implies <span
+class="math inline"><em>P</em> → <em>Q</em></span>.)</p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>∨<em>R</em>) ⊢ ¬<em>R</em> → (¬<em>Q</em>→¬<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>Q</em> ⊢ (<em>P</em>∧<em>Q</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>Q</em> ⊢ <em>P</em> → (<em>Q</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>→<em>Q</em>) ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ (<em>P</em>∧<em>Q</em>) ∨ (<em>P</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>)  ⊣ ⊢ (<em>P</em>→<em>Q</em>) → (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>P</em>  ⊣ ⊢ ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→¬<em>Q</em>)  ⊣ ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → (<em>P</em>→¬<em>Q</em>)  ⊣ ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∧ (<em>Q</em>∨¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∨ (<em>Q</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>Q</em> ⊢ (<em>Q</em>→<em>P</em>) → <em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>R</em> ⊢ (<em>P</em>→<em>R</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>R</em>) → <em>R</em>  ⊣ ⊢ <em>P</em> ∨ <em>R</em></span>
+(Hint: it’s easy to derive <span
+class="math inline">¬<em>P</em> → <em>R</em></span> from the sentence on
+the left.)</p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em>  ⊣ ⊢ <em>P</em></span>
+(Hint: assume <span class="math inline">¬<em>P</em></span> and derive
+<span class="math inline"><em>P</em> → <em>Q</em></span>.)</p></li>
+</ol>
+<h1 id="strategy-summary-and-tips">Strategy summary and tips</h1>
+<h2 id="conditional-proof-1">Conditional proof</h2>
+<p>Conditional proof is relatively easy to execute, and to check for
+correctness. However, you sometimes have to have a very good eye indeed
+to see how to set up a conditional proof. Here are some rules of
+thumb:</p>
+<p>First: A step of conditional proof almost never happens “by mistake”.
+That is, you shouldn’t ever just see two previous lines in your proof
+and decide to apply conditional proof to them. Instead, you should apply
+conditional proof only when you have decided (in advance) that you want
+to prove a conditional, and you have assumed that conditional’s
+antecedent with the specific intention of using CP. One way to enforce
+this upon yourself is by making an (optional) annotation to your
+assumptions. For example, in the proof of <span
+class="math inline"><em>P</em> → <em>Q</em>, <em>Q</em> → <em>R</em> ⊢ <em>P</em> → <em>R</em></span>:</p>
+<pre><code>1     (1) p&gt;q     A
+2     (2) q&gt;r     A
+3     (3) p       A (goal: r)
+1,3   (4) q       1,3 MP
+1,2,3 (5) r       2,4 MP
+1,2   (6) p&gt;r     3,5 CP </code></pre>
+<p>Second: Sometimes CP seems too good to be true, in particular, for
+proving conditions that have logically strong antecedents. Consider, for
+example, the proof of <span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ (<em>P</em>∧<em>Q</em>) → <em>R</em></span>.</p>
+<pre><code>1   (1) p&gt;(q&gt;r)    A
+2   (2) p&amp;q        A (goal: r)
+2   (3) p          2 &amp;E
+1,2 (4) q&gt;r        1,3 MP
+2   (5) q          2 &amp;E
+1,2 (6) r          4,5 MP
+1   (7) (p&amp;q)&gt;r    2,6 CP</code></pre>
+<p>I assumed <code>p&amp;q</code> on line 2 precisely because my goal
+was to obtain the conditional <code>(p&amp;q)&gt;r</code>. So I assumed
+the entire antecedent of that conditional, which gave me what I needed
+to apply modus ponens twice.</p>
+<h2 id="or-elimination-1">Or elimination</h2>
+<p>In contrast to CP, it can be very tricky to get the dependencies
+right in an application of or elimination. However, if your understand
+the strategy behind or elimination, and if you only use assumptions that
+you have made as part of this strategy, then you will usually not make
+mistakes with calculating the dependencies.</p>
+<h1 id="evaluating-proofs">Evaluating proofs</h1>
+<p><strong>Exercise</strong> Which of the following proofs with CP is
+correct? If a proof is not correct, explain what is wrong with it, and
+say whether there is a simple fix, or whether it is fatally flawed. (The
+following “proofs” use a slightly different notation – one that is
+easier to input via keyboard. Hopefully the relation between the two
+notations will become clear from the context.)</p>
+<pre><code>1   (1) p&amp;q     A
+1   (2) p       1 &amp;E 
+1   (3) q       2 &amp;E 
+    (4) p&gt;q     2,3 CP</code></pre>
+<pre><code>1  (1) q     A
+2  (2) p     A
+1  (3) p&gt;q   2,1 CP</code></pre>
 <p><strong>Exercise</strong> Which of the following proofs with
 or-elimination is correct? If a proof is not correct, explain what is
 wrong with it, and say whether there is a simple fix, or whether it is
-fatally flawed.</p>
-<h2 id="eliminating-all-dependency-numbers">Eliminating all dependency
-numbers</h2>
+fatally flawed. (The following “proofs” use a slightly different
+notation – one that is easier to input via keyboard. Hopefully the
+relation between the two notations will become clear from the
+context.)</p>
+<pre><code>1  (1) p|p    A
+2  (2) p      A
+1  (3) p      1,2,2,2,2 |E</code></pre>
+<pre><code>1   (1) p|q    A
+2   (2) p      A
+3   (3) q      A
+2,3 (4) p&amp;q    2,3 &amp;I
+2,3 (5) p      4 &amp;E
+1   (6) p      1,2,2,3,5 |E </code></pre>
 </body>
 </html>
