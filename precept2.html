@@ -205,6 +205,13 @@ class="math inline"><em>P</em> ⊢ ¬¬(<em>P</em>∨<em>Q</em>)</span></p></l
 </ol>
 <h1 id="new-proof-rules">New proof rules</h1>
 <h2 id="conditional-proof">Conditional proof</h2>
+<p>Recall that a <strong>conditional</strong> is a statement of the form
+<span class="math inline"><em>A</em> → <em>B</em></span>. The rules MP
+and MT allow us to reason <em>from</em> conditionals, while the rule CP
+allows us to reason <em>to</em> conditionals. The general pattern of CP
+is: to prove <span class="math inline"><em>A</em> → <em>B</em></span>,
+one assumes <span class="math inline"><em>A</em></span> and proves <span
+class="math inline"><em>B</em></span>.</p>
 <p><strong>Exercise 3.1</strong> Prove the following sequents. (You
 should not use reductio ad absurdum in any of these problems, although
 you might be tempted to do so in 3.1.8, 3.1.9, and 3.1.10. The hints
@@ -220,7 +227,9 @@ class="math inline">(<em>P</em>→<em>Q</em>) ∧ (<em>P</em>→<em>R</em>)�
 <li><p><span
 class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ <em>Q</em> → (<em>P</em>→<em>R</em>)</span></p></li>
 <li><p><span
-class="math inline"><em>P</em> → <em>Q</em> ⊢ (<em>Q</em>→<em>R</em>) → (<em>P</em>→<em>R</em>)</span></p></li>
+class="math inline"><em>P</em> → <em>Q</em> ⊢ (<em>Q</em>→<em>R</em>) → (<em>P</em>→<em>R</em>)</span>
+(Hint: this will seem easy once you assume the antecedent of the
+conclusion.)</p></li>
 <li><p><span
 class="math inline"><em>P</em> → (<em>P</em>→<em>Q</em>) ⊢ <em>P</em> → <em>Q</em></span></p></li>
 <li><p><span

@@ -45,6 +45,11 @@ incorporating the use of dependency numbers.
 
 ## Conditional proof
 
+Recall that a **conditional** is a statement of the form $A\to B$. The
+rules MP and MT allow us to reason *from* a conditional, while the
+rule CP allows us to reason *to* a conditional. The general pattern of
+CP is: to prove $A\to B$, one assumes $A$ and proves $B$.
+
 **Exercise 3.1** Prove the following sequents. (You should not use
 reductio ad absurdum in any of these problems, although you might be
 tempted to do so in 3.1.8, 3.1.9, and 3.1.10. The hints explain how
@@ -59,7 +64,8 @@ connectives.)
 
 3.  $P\to (Q\to R)\:\vdash\: Q\to (P\to R)$
 
-4.  $P\to Q\:\vdash\: (Q\to R)\to (P\to R)$
+4.  $P\to Q\:\vdash\: (Q\to R)\to (P\to R)$  (Hint: this will seem
+    easy once you assume the antecedent of the conclusion.)
 
 5.  $P\to (P\to Q)\:\vdash\: P\to Q$
 
