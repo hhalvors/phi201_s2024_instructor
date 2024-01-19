@@ -25,6 +25,21 @@ incorporating the use of dependency numbers.
 
 1. $P\wedge (Q\wedge R)\:\dashv\vdash\: (P\wedge Q)\wedge R$ 
 
+```
+1  (1) p&(q&r)   A
+1  (2) p         1 &E
+1  (3) q&r       1 &E
+1  (4) q         3 &E
+1  (5) r         3 &E
+1  (6) p&q       2,4 &I
+1  (7) (p&q)&r   6,5 &I
+```
+
+Here we see, among other things, that and introduction tells us to
+combine dependencies, but that we don't need to include
+redundancies. In particular, we write just `1` as dependency in lines
+6 and 7 instead of `1,1` or `1,1,1`.
+
 2. $P\:\dashv\vdash\: P\wedge P$
 
 3. $P\to \neg Q,Q\: \vdash \: \neg P$

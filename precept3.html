@@ -182,6 +182,80 @@ to you to decide which move is most likely to get you to the goal.) What
 you will need to do is to develop a good sense of strategy, and the best
 way to develop that sense is through practice.</p>
 <h1 id="proofs-with-raa">Proofs with RAA</h1>
+<p><strong>Exercise 3.4</strong> Prove the following sequents.</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> → <em>Q</em> ⊢ ¬(<em>P</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>∧<em>Q</em>) ⊢ ¬<em>P</em> ∨ ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>→<em>Q</em>) ⊢ <em>P</em> ∧ ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"> ⊢ (<em>P</em>→<em>Q</em>) ∨ (<em>Q</em>→<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>∨<em>R</em>) ⊢ (<em>P</em>→<em>Q</em>) ∨ (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∧<em>Q</em>) → ¬<em>Q</em> ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ∧ ¬<em>Q</em> ⊢ ¬(<em>P</em>→<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">⊢ ((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>
+(Hint: One possibility is to first prove <span
+class="math inline"> ⊢ <em>P</em> ∨ ¬<em>P</em></span>, and then argue
+by cases. The first case is easy if you remember “positive paradox”. For
+the second case, remember “negative paradox”, i.e. that <span
+class="math inline">¬<em>P</em></span> implies <span
+class="math inline"><em>P</em> → <em>Q</em></span>.)</p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>∨<em>R</em>) ⊢ ¬<em>R</em> → (¬<em>Q</em>→¬<em>P</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>Q</em> ⊢ (<em>P</em>∧<em>Q</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>Q</em> ⊢ <em>P</em> → (<em>Q</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>→<em>Q</em>) ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ (<em>P</em>∧<em>Q</em>) ∨ (<em>P</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>)  ⊣ ⊢ (<em>P</em>→<em>Q</em>) → (<em>P</em>→<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → ¬<em>P</em>  ⊣ ⊢ ¬<em>P</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→¬<em>Q</em>)  ⊣ ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → (<em>P</em>→¬<em>Q</em>)  ⊣ ⊢ <em>P</em> → ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∧ (<em>Q</em>∨¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∨ (<em>Q</em>∧¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>Q</em> ⊢ (<em>Q</em>→<em>P</em>) → <em>P</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>R</em> ⊢ (<em>P</em>→<em>R</em>) → <em>R</em></span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>R</em>) → <em>R</em>  ⊣ ⊢ <em>P</em> ∨ <em>R</em></span>
+(Hint for <span class="math inline">⊢</span>: it’s easy to derive <span
+class="math inline">¬<em>P</em> → <em>R</em></span> from the sentence on
+the left.)</p></li>
+<li><p><span
+class="math inline">(<em>P</em>→<em>Q</em>) → <em>P</em>  ⊣ ⊢ <em>P</em></span>
+(Hint for <span class="math inline">⊢</span>: assume <span
+class="math inline">¬<em>P</em></span> and derive <span
+class="math inline"><em>P</em> → <em>Q</em></span>.)</p></li>
+</ol>
+<h1 id="clarifications">Clarifications</h1>
+<p>Just like CP and <span class="math inline">∨</span>E, using RA on a
+line does not require that the relevant assumption occurs among the
+dependencies on that line. Here’s a classic example:</p>
+<pre><code>1   (1) p      A
+2   (2) -p     A
+3   (3) -q     A
+1,2 (4) p&amp;-p   1,2 &amp;I
+1,2 (5) --q    3,4 RA
+1,2 (6) q      5 DN</code></pre>
+<p>To be clear, RA only allows you to add a negation sign, not to
+subtract one. That’s why, in the proof above, we had also to use a step
+of DN.</p>
 <h1 id="more-proofs">More proofs</h1>
 <!-- working backwards -->
 <!-- briding the gap with other proofs you've already done -->
