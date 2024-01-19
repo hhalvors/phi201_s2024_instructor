@@ -131,7 +131,7 @@ We do *not* take a rule like that to be basic. The main reason we
 don't take it to be basic is because we don't have to: it follows, as
 a logical consequence, from the rules we already have! That is, you
 *can* simply replace subformulas with logically equivalent formulas,
-and I promise you that another more patient (or more skeptical) person
+and I promise you[^2] that another more patient (or more skeptical) person
 could get the same derivation just by using the other rules.
 
 **Exercise.** Walk through the following series of equivalences
@@ -218,3 +218,6 @@ terms of semantics (truth tables) why this sequent is OK.
 
 [^1]: The nature of the cut rule is actually a subject of serious
 inquiry in mathematical logic (proof theory) and philosophical logic.
+
+[^2]: The promise here is based on a mathematical theorem, and the
+theorem is actually not that hard to prove.
