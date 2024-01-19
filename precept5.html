@@ -173,7 +173,24 @@
 proofs to truth tables, and (3) review for midterm exam.</p>
 <h1 id="meta-rules-for-proofs">Meta-rules for proofs</h1>
 <h2 id="substitution">Substitution</h2>
+<p>Since our rules of proof are schematic, changing propositional
+constants (i.e. atomic sentences) in a proof preserves validity.</p>
+<p>BUT: an invalid argument can be made valid by substitution! Example:
+<span class="math inline"><em>P</em> → <em>Q</em></span> is invalid, but
+<span class="math inline"><em>P</em> → <em>P</em></span> is valid.</p>
 <h2 id="cut">Cut</h2>
+<p>You don’t need to be able to articulate “cut”, but it is one
+important way that old proofs can be spliced together to make new
+proofs. Let’s illustrate it with an example.</p>
+<pre><code>1   (1) p|q        A
+2   (2) -p         A
+3   (3) p          A
+2,3 (4) q          2,3 cut EFQ
+5   (5) q          A
+1,2 (6) q          1,3,4,5,5 |E</code></pre>
+<pre><code>1   (1) p|q        A
+2   (2) -p         A
+1,2 (3) q          1,2 cut disjunctive syllogism</code></pre>
 <h2 id="replacement">Replacement</h2>
 <h2 id="liberal-proofs">Liberal proofs</h2>
 <h1 id="relating-proofs-and-truth-tables">Relating proofs and truth
@@ -197,8 +214,22 @@ class="math inline"><em>A</em><sub>1</sub>, …, <em>A</em><sub><em>n</em></
 class="math inline"><em>B</em></span> on the main line, and dependencies
 <span
 class="math inline"><em>A</em><sub>1</sub>, …, <em>A</em><sub><em>n</em></sub></span>.)</p>
-<p><strong>Completeness theorem:</strong></p>
-<p><em>What it means in practice:</em></p>
+<p><strong>Completeness theorem:</strong> If the argument from <span
+class="math inline"><em>A</em><sub>1</sub>, …, <em>A</em><sub><em>n</em></sub></span>
+to <span class="math inline"><em>B</em></span> is valid (in the sense of
+truth tables), then there is a correctly written proof of the sequent
+<span
+class="math inline"><em>A</em><sub>1</sub>, …, <em>A</em><sub><em>n</em></sub> ⊢ <em>B</em></span>.</p>
+<p><em>What it means in practice:</em> If the truth table for <span
+class="math inline"><em>A</em><sub>1</sub>, …, <em>A</em><sub><em>n</em></sub>; <em>B</em></span>
+says that it’s valid, then there is a proof — no matter how unlikely it
+might seem!</p>
+<p>As a special case: if <span class="math inline"><em>B</em></span> is
+a tautology (true in all cases), then there is a proof of the sequent
+<span class="math inline"> ⊢ <em>B</em></span>. Examples: <span
+class="math inline"><em>P</em> ∨ ¬<em>P</em></span>, <span
+class="math inline"><em>P</em> → <em>P</em></span>, <span
+class="math inline">((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>.</p>
 <p><strong>Exercise:</strong> Explain how you know that the following is
 not a good proof strategy:</p>
 <p><strong>Exercise:</strong> Can there be a correctly written proof
