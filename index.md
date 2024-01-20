@@ -16,3 +16,4 @@ author: Hans Halvorson
 - [Precept 9](precept9.html)
 - [Precept 10](precept10.html)
 - [Precept 11](precept11.html)
+- [Programming tools](tools.html)
