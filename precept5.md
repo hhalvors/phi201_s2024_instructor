@@ -151,6 +151,15 @@ fact is also a good illustration of the points covered in the next
 section -- about proofs and truth tables.)
 
 
+**Question for reflection.** Can you propose any other meta-rules
+that might help one to get new proofs from old? There are some obvious
+validity-preserving transformations, but they don't immediately seem
+like they would be useful. For example, one could always push all of
+the assumptions in a proof so that they occur on the first lines
+(before any inferences are drawn). But it's not clear that would be
+helpful in any way.
+
+
 
 
 ## Liberal proofs 
@@ -215,6 +224,10 @@ terms of semantics (truth tables) why this sequent is OK.
 
 
 # Review for midterm exam
+
+You are allowed to bring a "cheat sheet" for the midterm exam, but
+what should go on it? 
+
 
 [^1]: The nature of the cut rule is actually a subject of serious
 inquiry in mathematical logic (proof theory) and philosophical logic.
