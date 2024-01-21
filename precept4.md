@@ -3,6 +3,8 @@ title: "logic precept 4"
 author: Hans Halvorson
 ---
 
+# Introduction 
+
 Today we develop a different approach to looking at (formal)
 arguments. Many of you will already have heard about the notion of a
 truth table. What you might not have heard is how truth tables are
@@ -94,7 +96,36 @@ Q)$.
 **Exercise.** Write a full truth table for $(P\to Q)\to R$.
 
 
-## Mathematical aside 
+# Sentence structure 
+
+Each sentence of proposition logic is either atomic, or it has a
+**main connective**. This main connective is the last connective that
+is added in the construction of the sentence --- a notion that can be
+defined more precisely than we have so far. It can be a good idea,
+when you are writing a truth table, to circle or highlight thex column
+under the main connective so as to be clear about the meaning of the
+truth table.
+
+**Exercise.** What is the main connective of each of the following
+formulas?
+
+1. $\neg (P\to Q)$
+
+2. $\neg P\to Q$
+
+3. $\neg (P\to \neg Q)$
+
+4. $(P\wedge Q)\vee \neg (P\to Q)$
+
+5. $((P\to Q)\to P)\to P$
+
+## Parse trees
+
+![](tree.jpg)
+
+
+
+# Aside for programmers 
 
 A truth table for a sentence is a completely explicit representation
 of the values of the set of all truth functions as applied to that
@@ -183,18 +214,6 @@ the main connective of a wff.
 
 ## For a single sentence
 
-Each sentence of proposition logic is either atomic, or it has a
-**main connective**. This main connective is the last connective that
-occurs in the parse tree of the sentence, and it is also the last
-column to be filled out in a truth table for the sentence. It is a
-good idea, when you are writing a truth table, to circle or highlight
-the column under the main connective so as to stay clear about the
-meaning of the truth table.
-
-**Exercise:** What is the main connective of $(P\wedge Q)\vee \neg
-(P\to Q)$?
-
-**Exercise:** What is the main connective of $((P\to Q)\to P)\to P$?
 
 There are only three ways that the truth table of a single sentence
 can turn out. The column under the main connective can have:

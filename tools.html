@@ -232,8 +232,8 @@
 <h1 class="title">additional tools</h1>
 <p class="author">Hans Halvorson</p>
 </header>
-<h1 id="defining-formulas-etc.-as-data-structures">Defining formulas
-etc. as data structures</h1>
+<h1 id="defining-formulas-as-data-structures">Defining formulas as data
+structures</h1>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">WFF</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ot">=</span> <span class="dt">Var</span> <span class="dt">String</span>       <span class="co">-- Variables</span></span>
@@ -273,5 +273,25 @@ more difficult, since the computer has to be instructed to parse the
 string in the right way. One approach can be found at <a
 href="http://cmsc-16100.cs.uchicago.edu/2017/Notes/propositional-logic-parsing.php">this
 course webpage</a></p>
+<h1 id="defining-sequents-inference-rules-and-proofs">Defining sequents,
+inference rules, and proofs</h1>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">SEQ</span> <span class="ot">=</span> ([<span class="dt">WFF</span>], <span class="dt">WFF</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">InferenceRule</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="ot">=</span> <span class="dt">Assumption</span> <span class="dt">A</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">DoubleNegation</span> <span class="dt">Int</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">AndElim</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">AndIntro</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">OrElim</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">OrIntro</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">MP</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">MT</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">CP</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">|</span> <span class="dt">RA</span> <span class="dt">Int</span> <span class="dt">Int</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">deriving</span> (<span class="dt">Show</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">ProofStep</span> <span class="ot">=</span> (<span class="dt">SEQ</span>, <span class="dt">InferenceRule</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">LEM</span> <span class="ot">=</span> [<span class="dt">ProofStep</span>]</span></code></pre></div>
 </body>
 </html>

@@ -232,6 +232,7 @@
 <h1 class="title">logic precept 4</h1>
 <p class="author">Hans Halvorson</p>
 </header>
+<h1 id="introduction">Introduction</h1>
 <p>Today we develop a different approach to looking at (formal)
 arguments. Many of you will already have heard about the notion of a
 truth table. What you might not have heard is how truth tables are
@@ -429,7 +430,31 @@ class="math inline">(<em>P</em>∧<em>Q</em>) ∨ (¬<em>P</em>∧¬<em>Q</e
 class="math inline">(<em>P</em>∧<em>Q</em>) ∨ ¬(<em>P</em>→<em>Q</em>)</span>.</p>
 <p><strong>Exercise.</strong> Write a full truth table for <span
 class="math inline">(<em>P</em>→<em>Q</em>) → <em>R</em></span>.</p>
-<h2 id="mathematical-aside">Mathematical aside</h2>
+<h1 id="sentence-structure">Sentence structure</h1>
+<p>Each sentence of proposition logic is either atomic, or it has a
+<strong>main connective</strong>. This main connective is the last
+connective that is added in the construction of the sentence — a notion
+that can be defined more precisely than we have so far. It can be a good
+idea, when you are writing a truth table, to circle or highlight thex
+column under the main connective so as to be clear about the meaning of
+the truth table.</p>
+<p><strong>Exercise.</strong> What is the main connective of each of the
+following formulas?</p>
+<ol type="1">
+<li><p><span
+class="math inline">¬(<em>P</em>→<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">¬<em>P</em> → <em>Q</em></span></p></li>
+<li><p><span
+class="math inline">¬(<em>P</em>→¬<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">(<em>P</em>∧<em>Q</em>) ∨ ¬(<em>P</em>→<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline">((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span></p></li>
+</ol>
+<h2 id="parse-trees">Parse trees</h2>
+<p><img src="tree.jpg" /></p>
+<h1 id="aside-for-programmers">Aside for programmers</h1>
 <p>A truth table for a sentence is a completely explicit representation
 of the values of the set of all truth functions as applied to that
 sentence. Given a list <span class="math inline"><em>Σ</em></span> of
@@ -502,17 +527,6 @@ something that one recommends students to explicitly follow to find the
 main connective of a wff.</p>
 <h1 id="what-do-truth-tables-mean">What do truth tables mean?</h1>
 <h2 id="for-a-single-sentence">For a single sentence</h2>
-<p>Each sentence of proposition logic is either atomic, or it has a
-<strong>main connective</strong>. This main connective is the last
-connective that occurs in the parse tree of the sentence, and it is also
-the last column to be filled out in a truth table for the sentence. It
-is a good idea, when you are writing a truth table, to circle or
-highlight the column under the main connective so as to stay clear about
-the meaning of the truth table.</p>
-<p><strong>Exercise:</strong> What is the main connective of <span
-class="math inline">(<em>P</em>∧<em>Q</em>) ∨ ¬(<em>P</em>→<em>Q</em>)</span>?</p>
-<p><strong>Exercise:</strong> What is the main connective of <span
-class="math inline">((<em>P</em>→<em>Q</em>)→<em>P</em>) → <em>P</em></span>?</p>
 <p>There are only three ways that the truth table of a single sentence
 can turn out. The column under the main connective can have:</p>
 <ol type="1">
