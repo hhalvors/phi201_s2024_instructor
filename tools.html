@@ -257,10 +257,13 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a 
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  [(<span class="st">&quot;p&quot;</span>,<span class="dt">False</span>),(<span class="st">&quot;q&quot;</span>,<span class="dt">True</span>)],</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  [(<span class="st">&quot;p&quot;</span>,<span class="dt">False</span>),(<span class="st">&quot;q&quot;</span>,<span class="dt">False</span>)]</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
-<h1 id="between-human-and-machine">Between human and machine</h1>
-<p>We want to be able to move back and forth between WFFs qua data
-structures and WFFs qua human-readable strings of symbols. To go from
-left to right, we could use a function like this one:</p>
+<h1 id="from-paper-to-haskell-and-back-again">From paper to Haskell and
+back again</h1>
+<p>We want to be able to move back and forth between logic as written on
+paper (or typed into a text editor) and logic as data structures (in
+Haskell). For example, to convert a WFF data structure to a
+human-readable string, we could use the following <code>showWFF</code>
+function:</p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ot">showWFF ::</span> <span class="dt">WFF</span> <span class="ot">-&gt;</span> <span class="dt">String</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>showWFF (<span class="dt">Var</span> x) <span class="ot">=</span> x</span>
