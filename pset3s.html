@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>logic pset2</title>
+  <title>logic pset3</title>
   <style>
     html {
       line-height: 1.5;
@@ -165,100 +165,68 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">logic pset2</h1>
+<h1 class="title">logic pset3</h1>
 </header>
-<h1 id="a.">A.</h1>
-<p>Use Conditional Proof (and possibly the previous rules) to prove the
-following sequents. Be sure to include dependency numbers in the
-leftmost column of your proof.</p>
+<p>You may use any of the rules of inference, including reductio ad
+absurdum, to prove the following sequents.</p>
 <ol type="1">
 <li><p><span
-class="math inline"><em>P</em> → <em>Q</em> ⊢ <em>P</em> → (<em>Q</em>∨<em>R</em>)</span></p>
-<pre><code>1   (1) P→Q      A
-2   (2) P        A
-1,2 (3) Q        A
-1,2 (4) Q∨R      3 ∨I
-1   (5) P→(Q∨R)  2,4 CP</code></pre></li>
+class="math inline"><em>P</em> → ¬<em>P</em> ⊢ ¬<em>P</em></span></p>
+<pre><code>1   (1) P→¬P    A
+2   (2) P       A
+1,2 (3) P∧¬P    1,2 MP
+1   (4) ¬P      2,3 RA</code></pre></li>
 <li><p><span
-class="math inline"><em>P</em> ⊢ (<em>P</em>→¬<em>P</em>) → ¬<em>P</em></span></p>
-<pre><code>1   (1) P          A
-2   (2) P→¬P       A
-1,2 (3) ¬P         A
-1   (4) (P→¬P)→¬P  2,3 CP</code></pre></li>
+class="math inline">(<em>P</em>∧<em>Q</em>) → ¬<em>Q</em> ⊢ <em>P</em> → ¬<em>Q</em></span></p>
+<pre><code>1     (1) (P∧Q)→¬Q    A
+2     (2) P           A
+3     (3) Q           A
+2,3   (4) P∧Q         2,3 ∧I
+1,2,3 (5) ¬Q          1,4 MP
+1,2,3 (6) Q∧¬Q        3,5 ∧I
+1,2   (7) ¬Q          3,6 RA
+1     (8) P→¬Q        2,7 CP</code></pre></li>
 <li><p><span
-class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>) ⊢ <em>Q</em> → (<em>P</em>→<em>R</em>)</span></p>
-<pre><code>1     (1) P→(Q→R)   A
-2     (2) Q         A
-3     (3) P         A
-1,3   (4) Q→R       3,1 MP
-1,2,3 (5) R         4,2 MP
-1,2   (6) P→R       3,5 MP
-1     (7) Q→(P→R)   2,6 CP</code></pre></li>
+class="math inline">¬(<em>P</em>→<em>Q</em>) ⊢ <em>P</em> ∧ ¬<em>Q</em></span></p>
+<pre><code>1    (1) ¬(P→Q)           A
+2    (2) ¬P               A
+3    (3) P                A
+4    (4) ¬Q               A
+2,3  (5) P∧¬P             3,2 ∧I
+2,3  (6) ¬¬Q              4,5 RA
+2,3  (7) Q                6 DN
+2    (8) P→Q              3,7 CP
+1,2  (9) (P→Q)∧¬(P→Q)     8,1 ∧I
+1    (10) ¬¬P             2,9 RA
+1    (11) P               10 DN
+12   (12) Q               A
+12   (13) P→Q             3,12 CP
+1,12 (14) (P→Q)∧¬(P→Q)    13,1 ∧I
+1    (15) ¬Q              12,14 RA
+1    (16) P∧¬Q            11,15 ∧I</code></pre></li>
 <li><p><span
-class="math inline">¬<em>P</em> ⊢ ¬(<em>P</em>∧<em>Q</em>)</span></p>
-<pre><code>1  (1) ¬P       A
-2  (2) P∧Q      A
-2  (3) P        2 ∧E
-   (4) (P∧Q)→P  2,3 CP
-1  (5) ¬(P∧Q)   4,1 MT</code></pre></li>
+class="math inline">¬((<em>P</em>→<em>Q</em>)∨(<em>P</em>→<em>R</em>)) ⊢ <em>P</em></span></p>
+<pre><code>1   (1) ¬((P→Q)∨(P→R))                 A 
+2   (2) ¬P                             A
+3   (3) P                              A
+4   (4) ¬Q                             A
+2,3 (5) P∧¬P                           2,3 ∧I
+2,3 (6) ¬¬Q                            4,5 RA
+2,3 (7) Q                              6 DN
+2   (8) P→Q                            3,7 CP
+2   (9) (P→Q)∨(P→R)                    8 ∨I
+1,2 (10) ((P→Q)∨(P→R))∧¬((P→Q)∨(P→R))  9,1 ∧I
+1   (11) ¬¬P                           2,10 RA
+1   (12) P                             11 DN</code></pre></li>
 <li><p><span
-class="math inline">¬(<em>P</em>∨<em>Q</em>) ⊢ ¬<em>P</em></span></p>
-<pre><code>1  (1) ¬(P∨Q)   A
-2  (2) P        A
-2  (3) P∨Q      2 ∨I
-   (4) P→(P∨Q)  2,3 CP
-1  (5) ¬P       4,1 MT</code></pre></li>
-</ol>
-<h1 id="b.">B.</h1>
-<p>Use <span class="math inline">∨</span>-elimination (and possibly the
-previous rules) to prove the following sequents. Do <em>not</em> use
-reductio ad absurdum for any of these proofs.</p>
-<ol type="1">
-<li><p><span
-class="math inline"><em>P</em> ∨ (<em>Q</em>∧<em>R</em>) ⊢ <em>P</em> ∨ <em>Q</em></span></p>
-<pre><code>1 (1) P∨(Q∧R)   A
-2 (2) P         A
-2 (3) P∨Q       2 ∨I
-4 (4) Q∧R       A
-4 (5) Q         4 ∧E
-4 (6) P∨Q       5 ∨I
-1 (7) P∨Q       1,2,3,4,6 ∨E</code></pre></li>
-<li><p><span
-class="math inline"><em>P</em> ∧ (<em>Q</em>∨<em>R</em>) ⊢ (<em>P</em>∧<em>Q</em>) ∨ (<em>P</em>∧<em>R</em>)</span></p>
-<pre><code>1   (1)  P∧(Q∨R)       A
-1   (2)  P             1 ∧E
-1   (3)  Q∨R           1 ∧E
-4   (4)  Q             A
-1,4 (5)  P∧Q           2,4 ∧I
-1,4 (6)  (P∧Q)∨(P∧R)   5 ∨I
-7   (7)  R             A
-1,7 (8)  P∧R           2,7 ∧I
-1,7 (9)  (P∧Q)∨(P∧R)   8 ∨I
-1   (10) (P∧Q)∨(P∧R)   3,4,6,7,9 ∨E</code></pre></li>
-<li><p><span
-class="math inline"><em>P</em> ∨ <em>Q</em>, ¬<em>P</em> ⊢ <em>Q</em></span></p>
-<pre><code>1   (1) P∨Q    A
-2   (2) ¬P     A
-3   (3) ¬Q     A
-2   (4) ¬Q→¬P  3,2 CP
-5   (5) P      A
-5   (6) ¬¬P    5 DN
-2,5 (7) ¬¬Q    4,6 MT
-2,5 (8) Q      7 DN
-9   (9) Q      A
-1,2 (10) Q     1,5,8,9,9 ∨E</code></pre></li>
-<li><p><span
-class="math inline">(<em>P</em>→<em>R</em>) ∧ (<em>Q</em>→<em>R</em>) ⊢ (<em>P</em>∨<em>Q</em>) → <em>R</em></span></p>
-<pre><code>1    (1) (P→R)∧(Q→R)   A
-1    (2) P→R           1 ∧E
-1    (3) Q→R           1 ∧E
-4    (4) P∨Q           A
-5    (5) P             A
-1,5  (6) R             2,5 MP
-7    (7) Q             A
-1,7  (8) R             3,7 MP
-1,4  (9) R             4,5,6,7,8 ∨E
-1    (10) (P∨Q)→R      4,9 CP</code></pre></li>
+class="math inline">¬((<em>P</em>→<em>Q</em>)∨(<em>P</em>→<em>R</em>)) ⊢ ¬<em>Q</em></span></p>
+<pre><code>1   (1) ¬((P→Q)∨(P→R))                  A 
+2   (2) Q                               A
+3   (3) P                               A
+2   (4) P→Q                             3,2 CP
+2   (5) (P→Q)∨(P→R)                     4 ∨I
+1,2 (6) ((P→Q)∨(P→R))∧¬((P→Q)∨(P→R))    5,1 ∧I
+1   (7) ¬Q                              2,6 RA</code></pre></li>
 </ol>
 </body>
 </html>
